@@ -7,6 +7,10 @@ backend:
   repo: loliemartinez/-lolie-portfolio
 
   branch: main
+
+  base_url: https://lolie-portfolio-oauth.lolie-martinezaubry.workers.dev
+
+  auth_endpoint: auth
 media_folder: "uploads"
 public_folder: "/uploads"
 locale: fr
