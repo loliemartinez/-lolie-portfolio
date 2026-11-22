@@ -1,21 +1,34 @@
 {
-  "id": "nyx",
+  "id": "NYX",
   "name": "NYX",
+  "category": "image",
   "type": "MUSIQUE · CAMPAGNE SOCIAL-FIRST",
-  "year": "PROJET CRÉATIF",
-  "art": "art-nyx",
+  "year": "2025",
   "headline": "Le son en images.",
   "tags": "Vidéo · Photographie · Social media",
   "context": "Décliner l’univers d’un groupe de musique en contenus pensés pour les réseaux sociaux.",
   "role": "Conception et réalisation d’une campagne de contenus comprenant 12 vidéos courtes, 2 vidéos longues et des photographies.",
-  "category": "image",
+  "description": "Des formats complémentaires pour faire vivre l’identité musicale sur plusieurs points de contact.",
+  "results": "",
+  "cover": "",
+  "art": "art-nyx",
   "order": 2,
   "featured": true,
   "published": true,
-  "images": [],
+  "images": [
+    {
+      "image": "/uploads/nyx-studio-loliemartinez3.jpg",
+      "caption": "Shooting promotionnel en studio - Lumière continue"
+    },
+    {
+      "image": "/uploads/nyx-studio-loliemartinez2.jpg",
+      "caption": "Shooting promotionnel en studio - Lumière continue"
+    },
+    {
+      "image": "/uploads/nyx-studio-loliemartinez1.jpg",
+      "caption": "Shooting promotionnel en studio - Lumière continue"
+    }
+  ],
   "videos": [],
-  "cover": "",
-  "caption": "",
-  "description": "Des formats complémentaires pour faire vivre l’identité musicale sur plusieurs points de contact.",
-  "results": ""
+  "caption": ""
 }
