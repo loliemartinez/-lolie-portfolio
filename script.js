@@ -8,29 +8,32 @@ const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersect
 nodes.forEach(el=>{el.classList.add('motion-reveal');io.observe(el)});document.documentElement.classList.add('js-motion');
 })();
 
-/* V7.4 - Motif personnel : étoile à quatre branches, 17 emplacements éditoriaux. */
+/* V7.5 - Motif quatre pointes allongées, tracé fin, positions éditoriales. */
 (()=>{
- const shape='<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M50 5 C53 31 60 40 95 50 C60 53 53 64 50 95 C47 64 39 53 5 50 C39 47 47 36 50 5 Z" fill="none" stroke="currentColor" stroke-width="3.3" stroke-linejoin="round" stroke-linecap="round"/></svg>';
- const pathname=location.pathname.split('/').pop()||'index.html';
- const config={
- 'index.html':[['.hero-tattoo-star','hero'],['#projets','top-right'],['.photo','bottom-left'],['.about','top-right'],['.contact','bottom-right']],
- 'projets.html':[['.subhero','top-right'],['.listing','top-right'],['.listing','bottom-left']],
- 'photographie.html':[['.photo-subhero','top-right'],['.gallery-intro','inline'],['.photo-masonry','bottom-right']],
- 'apropos.html':[['.subhero','top-right'],['.about-page','top-right'],['.skills-strip','inline'],['.about-page','bottom-left']],
- 'projet.html':[['.detail-hero','top-right'],['.case-work','top-right']]
+ const shape='<svg viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M50 3 C53 47 60 62 97 70 C60 78 53 93 50 137 C47 93 40 78 3 70 C40 62 47 47 50 3 Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>';
+ const page=location.pathname.split('/').pop()||'index.html';
+ // Emplacements de composition, jamais collés à la ponctuation des titres.
+ const spots={
+  'index.html':[['.hero-tattoo-star','hero'],['#projets','work'],['.photo-head','photo'],['.about-layout','about'],['.contact','contact']],
+  'projets.html':[['.subhero','corner'],['.listing','listing-top'],['.listing','listing-bottom']],
+  'photographie.html':[['.photo-subhero','corner'],['.gallery-intro','gallery'],['.photo-masonry','gallery-bottom']],
+  'apropos.html':[['.subhero','corner'],['.about-page','story'],['.skills-strip','skills'],['.about-page','story-bottom']],
+  'projet.html':[['.detail-hero','corner'],['.case-work','case']]
  };
- // 17 emplacements uniques sur les 5 gabarits : 5 + 3 + 3 + 4 + 2.
- (config[pathname]||[]).forEach(([selector,place],i)=>{
+ (spots[page]||[]).forEach(([selector,position],i)=>{
   const parent=document.querySelector(selector);if(!parent)return;
-  let node=(selector==='.hero-tattoo-star')?parent:document.createElement('span');
-  if(node!==parent){node.className='tattoo-star tattoo-star--detail tattoo-star--'+place;node.setAttribute('aria-hidden','true');parent.appendChild(node)}
+  const node=position==='hero'?parent:document.createElement('span');
+  if(position!=='hero'){
+   node.className='tattoo-star tattoo-star--detail tattoo-star--'+position;
+   node.setAttribute('aria-hidden','true');parent.appendChild(node);
+  }
   node.innerHTML=shape;
   if(i>0)node.classList.add('tattoo-star--subtle');
  });
  const hero=document.querySelector('.hero-tattoo-star');
  const title=document.querySelector('.hero-title h1');
  if(!hero||!title||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
- let pending=false;
- const animate=()=>{pending=false;const progress=Math.max(0,Math.min(window.scrollY/(window.innerHeight||800),1));hero.style.setProperty('--star-turn',`${progress*110}deg`);hero.style.setProperty('--star-rise',`${progress*-34}px`);title.style.setProperty('--title-rise',`${progress*-20}px`)};
- window.addEventListener('scroll',()=>{if(!pending){pending=true;requestAnimationFrame(animate)}},{passive:true});animate();
+ let scheduled=false;
+ const animate=()=>{scheduled=false;const progress=Math.max(0,Math.min(window.scrollY/(window.innerHeight||800),1));hero.style.setProperty('--star-turn',`${progress*65}deg`);hero.style.setProperty('--star-rise',`${progress*-26}px`);title.style.setProperty('--title-rise',`${progress*-16}px`)};
+ window.addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(animate)}},{passive:true});animate();
 })();
