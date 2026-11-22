@@ -1,0 +1,12 @@
+LOLIE MARTINEZ — V7
+
+Nouveautés : Pinyon Script (accents cursifs), galerie photo filtrable (4 catégories), vidéos YouTube/Vimeo/MP4 intégrables, blocs de réalisations ordonnés, contact orienté alternance, lien « Encore une ? ».
+
+APERÇU : ouvrir index.html dans le navigateur. Pour tester la galerie alimentée par JSON, lancer un serveur local (ex. python3 -m http.server 8000 dans ce dossier), puis ouvrir http://localhost:8000.
+
+PHOTOS : compléter content/photos.json (image, title, categories). Les images peuvent être placées dans uploads/.
+PROJETS : content/projects.json ; utiliser le champ blocks pour alterner image/vidéo/texte. Les champs images et videos historiques fonctionnent toujours.
+CV : ajouter assets/CV-Lolie-Martinez.pdf.
+CONTACT : remplacer TON-EMAIL@EXEMPLE.FR dans index.html.
+CMS : admin/config.yml est un modèle, NON ACTIF tant que le dépôt GitHub, l'authentification et l'hébergement ne sont pas configurés.
+IMPORTANT : les images, les vidéos et les résultats de projet ne sont pas inventés ; ajouter vos médias réels.

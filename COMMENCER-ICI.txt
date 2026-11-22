@@ -1,0 +1,5 @@
+PORTFOLIO LOLIE - V7.2 / PRÉPARATION CMS
+
+Ouvrir index.html pour un aperçu local.
+Lire GUIDE-CMS.md pour mettre en ligne et activer le CMS.
+Attention : l’administration nécessite encore la connexion GitHub et OAuth.

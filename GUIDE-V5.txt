@@ -1,0 +1,8 @@
+V5 — FICHES PROJETS
+
+La section « LE PROJET » et « LE FIL ROUGE » ont été supprimées.
+Chaque fiche comporte : LE CONTEXTE, MON INTERVENTION, DESCRIPTION DU PROJET (masquée si vide), RÉALISATIONS, et LES RÉSULTATS (masquée si vide).
+
+Dans le futur CMS, le champ « Résultats (facultatif) » est disponible pour chaque projet. Laissez-le vide pour ne pas afficher cette rubrique.
+
+Pour tester sans hébergement : ouvrez index.html. Pour activer le CMS, une configuration GitHub/authentification reste nécessaire.

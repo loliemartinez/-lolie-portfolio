@@ -1,0 +1,27 @@
+PORTFOLIO LOLIE MARTINEZ — COMMENT MODIFIER LE SITE
+
+1. TEXTES ET PROJETS
+Ouvre data.js avec Visual Studio Code (gratuit) ou un éditeur de texte.
+Chaque projet possède : name (nom), headline (accroche), context (contexte), role (missions), approach (approche), tags et year.
+Modifie uniquement le texte entre guillemets en conservant les virgules, accolades et crochets.
+
+2. PHOTOS SUR LES FICHES PROJETS
+Crée un dossier « images » à côté des fichiers HTML.
+Dépose tes images dedans (ex. connect-01.jpg, connect-02.jpg).
+Dans data.js, ajoute dans l'objet du projet, juste avant sa dernière accolade :
+images: ['images/connect-01.jpg', 'images/connect-02.jpg'],
+Attention : une virgule doit séparer ce champ du précédent.
+Les images apparaîtront automatiquement à la place du bloc provisoire.
+
+3. COULEURS ET MISE EN PAGE
+Ouvre style.css. Au début du fichier, change les variables --wine, --blue et --cream.
+Les styles des fiches projets V3 sont à la fin du fichier.
+
+4. AUTRES TEXTES
+Les pages index.html, apropos.html et photographie.html contiennent leur texte directement.
+
+5. PRÉVISUALISER
+Double-clique sur index.html. Après une modification, recharge la page dans le navigateur.
+
+IMPORTANT : il s'agit d'un site codé, pas d'un éditeur visuel comme Framer.
+Pour modifier sans code avec des clics, il faudra migrer vers un CMS/éditeur visuel (ex. Webflow, Framer) ou mettre en place un CMS compatible avec le site.

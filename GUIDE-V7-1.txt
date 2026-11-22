@@ -1,0 +1,11 @@
+V7.1 - corrections demandées
+
+- Cursive retirée du grand titre de la page d’accueil. Pinyon Script conservée comme accent discret ailleurs.
+- Bandeau photographie : défilement de photos d’ambiance en arrière-plan. Images Unsplash provisoires nécessitant Internet, à remplacer impérativement par les photos de Lolie. Le bandeau fonctionne aussi hors ligne avec des fonds colorés.
+- Frise corrigée : Merci papa, ARED, dates avec tirets simples, missions de création photo/vidéo et community management, projet de MBA en préparation.
+- Musique : formulation plus personnelle et moins axée festivals.
+- Espacement augmenté entre « Encore une ? » et « Retour aux projets ».
+- Pages mentions légales et confidentialité ajoutées, avec champs à compléter avant publication. Elles sont volontairement marquées noindex tant qu’elles ne sont pas finalisées.
+- CGV : non nécessaires pour un simple portfolio sans vente ou réservation de prestations ; à préparer séparément si le site sert à vendre des prestations professionnelles.
+- Cookies : pas de bandeau générique ajouté ; vérifier les services tiers et le consentement avant mise en ligne.
+- La configuration Decap CMS reste à finaliser après déploiement, pas active en local.

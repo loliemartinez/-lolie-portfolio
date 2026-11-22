@@ -1,0 +1,7 @@
+V6 — PAGE À PROPOS
+
+Frise chronologique animée : 2011, bac pro 2020–2023, BTS 2024–2026, alternance 2024–2027, Bachelor 2026–2027, ouverture 2027.
+Expériences anciennes : bouton déroulant dans la page À propos. Vérifier les intitulés et dates avant publication.
+CV : déposer ton propre PDF sous assets/CV-Lolie-Martinez.pdf. Aucun CV fictif n’est fourni.
+Les images de la page À propos pourront être ajoutées quand tu auras choisi tes photos.
+Pour prévisualiser, ouvrir index.html, puis À PROPOS.

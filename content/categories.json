@@ -1,0 +1,19 @@
+{
+  "categories": [
+    {
+      "id": "communication",
+      "name": "COMMUNICATION",
+      "order": 1
+    },
+    {
+      "id": "image",
+      "name": "PHOTO & VIDÉO",
+      "order": 2
+    },
+    {
+      "id": "editorial",
+      "name": "ÉDITORIAL",
+      "order": 3
+    }
+  ]
+}
