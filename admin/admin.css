@@ -1,0 +1,5 @@
+/* Habillage de l’interface Decap CMS : aucun impact sur le site public. */
+:root {--lolie-bordeaux:#390817;--lolie-blue:#B5DEFA;--lolie-cream:#F7F4EE;}
+body,button,input,textarea,select {font-family:'DM Sans',sans-serif !important;}
+h1,h2,h3 {font-family:'Space Grotesk',sans-serif !important;letter-spacing:-.035em;}
+/* Éviter les sélecteurs internes fragiles : Decap conserve ses contrôles natifs. */
