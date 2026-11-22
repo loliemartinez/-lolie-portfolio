@@ -48,3 +48,15 @@
 .legal-main{max-width:980px;margin:auto;padding:7rem 5vw}.legal-main h1{font-size:clamp(3rem,7vw,6rem);margin-bottom:2rem}.legal-main h2{font-size:1.6rem;letter-spacing:-.04em;margin:2rem 0 1rem}.legal-main p,.legal-main li{line-height:1.7;margin-bottom:1rem}.legal-main a{text-decoration:underline}.legal-alert{background:#b5defa;padding:1.3rem;margin:2rem 0}.legal-footer-links{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}.legal-footer-links a{text-decoration:underline;font-size:.8rem}
 @media(max-width:700px){.photo{min-height:520px}.photo-frame{width:70vw;min-width:220px}.photo-reel-track{animation-duration:32s}}
 @media(prefers-reduced-motion:reduce){.photo-reel-track{animation:none}}
+
+/* V7.3 - bandeau d'accueil en boucle continue, sans saut */
+.ticker{overflow:hidden;position:relative}
+.ticker .ticker-track{display:flex;align-items:center;width:max-content;animation:lolie-ticker-scroll 24s linear infinite;will-change:transform}
+.ticker .ticker-unit{display:block;flex:none;white-space:nowrap}
+@keyframes lolie-ticker-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* Apparitions progressives : uniquement après initialisation JS */
+@media(prefers-reduced-motion:no-preference){
+ .js-motion .motion-reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+ .js-motion .motion-reveal.motion-visible{opacity:1;transform:none}
+}
+@media(prefers-reduced-motion:reduce){.ticker .ticker-track{animation:none!important}}
