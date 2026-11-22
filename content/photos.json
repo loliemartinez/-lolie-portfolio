@@ -1,3 +1,15 @@
 {
-  "photos": []
+  "photos": [
+    {
+      "published": true,
+      "image": "/uploads/fireclub-6mic-loliemartinez-7.jpg",
+      "title": "FC",
+      "location": "AIX",
+      "year": "2026",
+      "alt": "Image de concert",
+      "categories": [
+        "live"
+      ]
+    }
+  ]
 }
