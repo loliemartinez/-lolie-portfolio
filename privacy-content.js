@@ -1,0 +1,1 @@
+(async()=>{try{const r=await fetch('/content/privacy.json',{cache:'no-store'});if(!r.ok)return;const d=await r.json();document.querySelectorAll('[data-privacy]').forEach(el=>{const v=d[el.dataset.privacy];if(typeof v==='string'&&v.trim())el.textContent=v.trim()})}catch(e){console.warn('Données de confidentialité non disponibles')}})();

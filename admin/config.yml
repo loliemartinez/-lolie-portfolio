@@ -79,10 +79,13 @@ collections:
     slug: "{{slug}}"
     identifier_field: "name"
     summary: "{{name}} · {{year}}"
-    preview_path: "/projet.html?id={{id}}"
+    preview_path: "/projets/{{id}}/"
     fields:
           - {label: "Identifiant unique (sans espace)", name: id, widget: string, hint: "Exemple : nouveau-projet. Ne plus changer après publication."}
           - {label: "Nom", name: name, widget: string}
+          - {label: "Titre SEO (Google)", name: seo_title, widget: string, required: false, hint: "Idéalement 50 à 60 caractères. Sinon généré depuis le nom du projet."}
+          - {label: "Description SEO (Google)", name: seo_description, widget: text, required: false, hint: "Résumé unique d'environ 140 à 160 caractères. Sinon généré depuis le contexte."}
+          - {label: "Image de partage LinkedIn / réseaux", name: seo_image, widget: image, required: false, hint: "Image publique, idéalement 1200 × 630 px. Sinon la couverture du projet."}
           - {label: "Catégorie (identifiant)", name: category, widget: select, options: [communication, image, editorial], hint: "Choisir une catégorie existante. Pour en ajouter une, modifier aussi les catégories."}
           - {label: "Type / secteur", name: type, widget: string}
           - {label: "Année", name: year, widget: string}
@@ -170,3 +173,33 @@ collections:
               - {label: "Année", name: year, widget: string, required: false}
               - {label: "Catégories", name: categories, widget: select, multiple: true, options: [live, portraits, territoires, reportages]}
               - {label: "Visible", name: published, widget: boolean, default: true}
+
+  - name: "referencement"
+    label: "SEO et référencement"
+    files:
+      - name: "seo"
+        label: "Titres, descriptions et partage des pages"
+        file: "content/seo.json"
+        format: json
+        fields:
+          - {label: "Titre SEO — Accueil", name: home_title, widget: string}
+          - {label: "Description SEO — Accueil", name: home_description, widget: text}
+          - {label: "Titre SEO — Projets", name: projects_title, widget: string}
+          - {label: "Description SEO — Projets", name: projects_description, widget: text}
+          - {label: "Titre SEO — Photographie", name: photography_title, widget: string}
+          - {label: "Description SEO — Photographie", name: photography_description, widget: text}
+          - {label: "Titre SEO — À propos", name: about_title, widget: string}
+          - {label: "Description SEO — À propos", name: about_description, widget: text}
+          - {label: "Image de partage par défaut", name: share_image, widget: image, required: false, hint: "Idéalement 1200 × 630 px. À défaut, aucun visuel de partage n'est imposé."}
+  - name: "confidentialite"
+    label: "Confidentialité"
+    files:
+      - name: "privacy"
+        label: "Informations sur les données personnelles"
+        file: "content/privacy.json"
+        format: json
+        fields:
+          - {label: "E-mail de contact RGPD", name: email, widget: string, required: false, hint: "À compléter avant ouverture publique."}
+          - {label: "Durée de conservation des échanges", name: retention, widget: string, required: false, hint: "Définir selon tes pratiques réelles ; ne pas inventer de durée."}
+          - {label: "Prestataires de messagerie et services utilisés", name: processors, widget: text, required: false, hint: "Renseigner uniquement les prestataires réellement utilisés."}
+          - {label: "Informations complémentaires sur les outils tiers", name: third_parties, widget: text, required: false, hint: "Vérifier les vidéos intégrées, polices et éventuels outils de mesure."}
