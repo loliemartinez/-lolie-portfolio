@@ -95,7 +95,8 @@ collections:
           - {label: "Mon rôle et mes réalisations", name: role, widget: text}
           - {label: "Description du projet", name: description, widget: text, required: false, hint: "Présentation libre de la démarche et des réalisations."}
           - {label: "Résultats (facultatif)", name: results, widget: text, required: false, hint: "Laisser vide pour masquer entièrement cette section. Ne renseigner que des résultats vérifiables."}
-          - {label: "Couverture (facultatif)", name: cover, widget: image, required: false}
+          - {label: "Photo de vignette (facultatif)", name: cover, widget: image, required: false, hint: "Choisissez une photo dans la médiathèque : elle s’affichera sur la vignette du projet et en en-tête de sa fiche."}
+          - {label: "Style de vignette", name: cover_mode, widget: select, options: [{label: "Photo de couverture", value: "photo"}, {label: "Composition graphique actuelle", value: "graphic"}], default: "photo", required: false, hint: "Sans photo, la vignette graphique est conservée automatiquement."}
           - {label: "Style de couverture (sans image)", name: art, widget: select, options: [art-connect, art-nyx, art-frette, art-wim, art-album, art-ris, art-options, art-fireclub, art-bavarde], default: art-connect}
           - {label: "Position dans la liste", name: order, widget: number, value_type: int, min: 1}
           - {label: "À la une sur l'accueil", name: featured, widget: boolean, default: false}

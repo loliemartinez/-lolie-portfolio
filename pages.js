@@ -1,8 +1,8 @@
 const ready=window.LOLIE_CONTENT_READY||Promise.resolve();
 const escapeHtml=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const safeMedia=s=>{const u=String(s||'');return /^(https?:\/\/|\/|images\/|uploads\/)/i.test(u)?u:''};
+const safeMedia=s=>{const u=String(s||'').trim();if(/^https?:\/\//i.test(u))return u;if(u.startsWith('/'))return u;if(/^(uploads|images|assets)\//i.test(u))return '/'+u;return '';};
 function projectCard(p){const a=document.createElement('a');a.className='project';a.href='/projets/'+encodeURIComponent(p.id)+'/';a.dataset.category=p.category||'';
- const cover=safeMedia(p.cover);a.innerHTML=`<div class="project-art ${escapeHtml(p.art||'art-connect')}" ${cover?`style="background-image:url('${encodeURI(cover).replace(/'/g,'%27')}');background-size:cover;background-position:center"`:''}><span class="art-small">${escapeHtml(p.type)}</span><strong>${escapeHtml(p.headline)}</strong><span class="art-bottom">${escapeHtml(p.tags)} ↗</span></div><div class="project-meta"><h3>${escapeHtml(p.name)}</h3><span>${escapeHtml(p.year)}</span></div>`;return a}
+ const cover=safeMedia(p.cover);const photo=!!cover && p.cover_mode!=='graphic';a.innerHTML=`<div class="project-art ${escapeHtml(p.art||'art-connect')} ${photo?'project-art-photo':''}" ${photo?`style="background-image:url('${encodeURI(cover).replace(/'/g,'%27')}');background-size:cover;background-position:center"`:''}><span class="art-small">${escapeHtml(p.type)}</span><strong>${escapeHtml(p.headline)}</strong><span class="art-bottom">${escapeHtml(p.tags)} ↗</span></div><div class="project-meta"><h3>${escapeHtml(p.name)}</h3><span>${escapeHtml(p.year)}</span></div>`;return a}
 ready.then(()=>{
  const projects=(window.LOLIE_PROJECTS||[]).filter(p=>p.published!==false).sort((a,b)=>(+a.order||999)-(+b.order||999));
  const grid=document.querySelector('#all-projects');const filters=document.querySelector('.filters');

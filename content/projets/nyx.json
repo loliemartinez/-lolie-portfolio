@@ -1,38 +1,22 @@
 {
-  "id": "NYX",
+  "id": "nyx",
   "name": "NYX",
-  "seo_title": "NYX | Campagne social media, photo & vidéo – Lolie Martinez",
-  "seo_description": "Découvrez NYX, un projet de campagne social media pour un groupe de musique : conception de contenus, réalisation de vidéos et photographie par Lolie Martinez.",
-  "seo_image": "/uploads/nyx-studio-loliemartinez3.jpg",
-  "category": "image",
   "type": "MUSIQUE · CAMPAGNE SOCIAL-FIRST",
-  "year": "2025",
+  "year": "PROJET CRÉATIF",
+  "art": "art-nyx",
   "headline": "Le son en images.",
   "tags": "Vidéo · Photographie · Social media",
   "context": "Décliner l’univers d’un groupe de musique en contenus pensés pour les réseaux sociaux.",
-  "role": "Conception et réalisation d’une campagne de contenus comprenant 12 vidéos courtes, 2 vidéos longues et des photographies en studio.",
-  "description": "Des formats complémentaires pour faire vivre l’identité musicale sur plusieurs points de contact.",
-  "results": "",
-  "cover": "",
-  "art": "art-nyx",
+  "role": "Conception et réalisation d’une campagne de contenus comprenant 12 vidéos courtes, 2 vidéos longues et des photographies.",
+  "category": "image",
   "order": 2,
   "featured": true,
   "published": true,
-  "blocks": [],
-  "images": [
-    {
-      "image": "/uploads/nyx-studio-loliemartinez3.jpg",
-      "caption": "Shooting promotionnel en studio - Lumière continue"
-    },
-    {
-      "image": "/uploads/nyx-studio-loliemartinez2.jpg",
-      "caption": "Shooting promotionnel en studio - Lumière continue"
-    },
-    {
-      "image": "/uploads/nyx-studio-loliemartinez1.jpg",
-      "caption": "Shooting promotionnel en studio - Lumière continue"
-    }
-  ],
+  "images": [],
   "videos": [],
-  "caption": ""
+  "cover": "",
+  "caption": "",
+  "description": "Des formats complémentaires pour faire vivre l’identité musicale sur plusieurs points de contact.",
+  "results": "",
+  "seo_image": ""
 }

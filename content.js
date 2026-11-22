@@ -2,7 +2,7 @@
 window.LOLIE_CONTENT_READY=(async()=>{
  if(location.protocol==='file:')return;
  try{
-  const [p,c]=await Promise.all([fetch('content/projects.json',{cache:'no-store'}),fetch('content/categories.json',{cache:'no-store'})]);
+  const [p,c]=await Promise.all([fetch('/content/projects.json',{cache:'no-store'}),fetch('/content/categories.json',{cache:'no-store'})]);
   if(!p.ok||!c.ok)throw Error('Contenu indisponible');
   const [pd,cd]=await Promise.all([p.json(),c.json()]);
   if(Array.isArray(pd.projects))window.LOLIE_PROJECTS=pd.projects;

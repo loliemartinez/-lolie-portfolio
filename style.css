@@ -104,3 +104,11 @@
 /* V7.6 - Aucun motif secondaire; une seule étoile sur l'accueil. */
 .tattoo-star--detail,.tattoo-star--subtle{display:none!important}
 .hero-tattoo-star svg path{stroke-width:3.5}
+
+/* V8 — couvertures photographiques et pictogrammes indépendants des emojis */
+.brand-spark{display:inline-block;width:.85em;height:.85em;vertical-align:middle;fill:currentColor;flex-shrink:0}
+.asterisk-small .brand-spark{width:1em;height:1em}
+.project-art-photo{color:#fff!important;background-color:#211c20!important;isolation:isolate}
+.project-art-photo::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.08) 35%,rgba(0,0,0,.65));z-index:0;pointer-events:none}
+.project-art-photo strong{max-width:95%;text-shadow:0 2px 16px rgba(0,0,0,.24)}
+.project-art-photo .art-small,.project-art-photo .art-bottom{color:#fff}
