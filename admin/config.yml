@@ -69,71 +69,71 @@ collections:
           - {label: "Étape 6 — titre", name: timeline_6_title, widget: text, required: true}
           - {label: "Étape 6 — description", name: timeline_6_text, widget: text, required: true}
           - {label: "CV à télécharger", name: cv_file, widget: file, required: false}
-  - name: "portfolio"
-    label: "Contenus du portfolio"
-    files:
-      - name: "projects"
-        label: "Projets"
-        file: "content/projects.json"
-        format: json
-        fields:
-          - label: "Projets (cliquer pour modifier)"
-            name: "projects"
+  - name: "projects"
+    label: "Projets — fiches individuelles"
+    label_singular: "Projet"
+    folder: "content/projets"
+    create: true
+    extension: "json"
+    format: "json"
+    slug: "{{slug}}"
+    identifier_field: "name"
+    summary: "{{name}} · {{year}}"
+    preview_path: "/projet.html?id={{id}}"
+    fields:
+          - {label: "Identifiant unique (sans espace)", name: id, widget: string, hint: "Exemple : nouveau-projet. Ne plus changer après publication."}
+          - {label: "Nom", name: name, widget: string}
+          - {label: "Catégorie (identifiant)", name: category, widget: select, options: [communication, image, editorial], hint: "Choisir une catégorie existante. Pour en ajouter une, modifier aussi les catégories."}
+          - {label: "Type / secteur", name: type, widget: string}
+          - {label: "Année", name: year, widget: string}
+          - {label: "Titre accroche", name: headline, widget: string}
+          - {label: "Missions — mots-clés", name: tags, widget: string}
+          - {label: "Contexte et objectifs", name: context, widget: text}
+          - {label: "Mon rôle et mes réalisations", name: role, widget: text}
+          - {label: "Description du projet", name: description, widget: text, required: false, hint: "Présentation libre de la démarche et des réalisations."}
+          - {label: "Résultats (facultatif)", name: results, widget: text, required: false, hint: "Laisser vide pour masquer entièrement cette section. Ne renseigner que des résultats vérifiables."}
+          - {label: "Couverture (facultatif)", name: cover, widget: image, required: false}
+          - {label: "Style de couverture (sans image)", name: art, widget: select, options: [art-connect, art-nyx, art-frette, art-wim, art-album, art-ris, art-options, art-fireclub, art-bavarde], default: art-connect}
+          - {label: "Position dans la liste", name: order, widget: number, value_type: int, min: 1}
+          - {label: "À la une sur l'accueil", name: featured, widget: boolean, default: false}
+          - {label: "Afficher sur le site", name: published, widget: boolean, default: true}
+          - label: "Blocs de réalisations (ordre libre)"
+            name: blocks
             widget: list
             collapsed: true
-            minimize_collapsed: true
-            summary: "{{fields.name}} — {{fields.category}}"
+            summary: "{{fields.kind}} — {{fields.caption}}"
+            required: false
+            hint: "Ajouter des blocs dans l’ordre souhaité : image, vidéo ou texte. Les anciens champs galerie restent compatibles."
             fields:
-              - {label: "Identifiant unique (sans espace)", name: id, widget: string, hint: "Exemple : nouveau-projet. Ne plus changer après publication."}
-              - {label: "Nom", name: name, widget: string}
-              - {label: "Catégorie (identifiant)", name: category, widget: select, options: [communication, image, editorial], hint: "Choisir une catégorie existante. Pour en ajouter une, modifier aussi les catégories."}
-              - {label: "Type / secteur", name: type, widget: string}
-              - {label: "Année", name: year, widget: string}
-              - {label: "Titre accroche", name: headline, widget: string}
-              - {label: "Missions — mots-clés", name: tags, widget: string}
-              - {label: "Contexte et objectifs", name: context, widget: text}
-              - {label: "Mon rôle et mes réalisations", name: role, widget: text}
-              - {label: "Description du projet", name: description, widget: text, required: false, hint: "Présentation libre de la démarche et des réalisations."}
-              - {label: "Résultats (facultatif)", name: results, widget: text, required: false, hint: "Laisser vide pour masquer entièrement cette section. Ne renseigner que des résultats vérifiables."}
-              - {label: "Couverture (facultatif)", name: cover, widget: image, required: false}
-              - {label: "Style de couverture (sans image)", name: art, widget: select, options: [art-connect, art-nyx, art-frette, art-wim, art-album, art-ris, art-options, art-fireclub, art-bavarde], default: art-connect}
-              - {label: "Position dans la liste", name: order, widget: number, value_type: int, min: 1}
-              - {label: "À la une sur l'accueil", name: featured, widget: boolean, default: false}
-              - {label: "Afficher sur le site", name: published, widget: boolean, default: true}
-              - label: "Blocs de réalisations (ordre libre)"
-                name: blocks
-                widget: list
-                collapsed: true
-                summary: "{{fields.kind}} — {{fields.caption}}"
-                required: false
-                hint: "Ajouter des blocs dans l’ordre souhaité : image, vidéo ou texte. Les anciens champs galerie restent compatibles."
-                fields:
-                  - {label: "Type", name: kind, widget: select, options: [image, video, text]}
-                  - {label: "Disposition", name: layout, widget: select, options: [standard, wide, vertical], default: standard}
-                  - {label: "Image", name: image, widget: image, required: false}
-                  - {label: "URL vidéo (YouTube, Vimeo ou MP4)", name: url, widget: string, required: false}
-                  - {label: "Texte", name: text, widget: text, required: false}
-                  - {label: "Légende", name: caption, widget: string, required: false}
-                  - {label: "Texte alternatif", name: alt, widget: string, required: false}
-              - label: "Galerie de photos"
-                name: images
-                widget: list
-                collapsed: true
-                summary: "{{fields.caption}}"
-                required: false
-                fields:
-                  - {label: "Photo", name: image, widget: image}
-                  - {label: "Texte alternatif", name: alt, widget: string, required: false}
-                  - {label: "Légende", name: caption, widget: string, required: false}
-              - label: "Liens vidéos"
-                name: videos
-                widget: list
-                collapsed: true
-                summary: "{{fields.caption}}"
-                required: false
-                fields:
-                  - {label: "Lien vers la vidéo", name: url, widget: string}
-                  - {label: "Légende", name: caption, widget: string, required: false}
+              - {label: "Type", name: kind, widget: select, options: [image, video, text]}
+              - {label: "Disposition", name: layout, widget: select, options: [standard, wide, vertical], default: standard}
+              - {label: "Image", name: image, widget: image, required: false}
+              - {label: "URL vidéo (YouTube, Vimeo ou MP4)", name: url, widget: string, required: false}
+              - {label: "Texte", name: text, widget: text, required: false}
+              - {label: "Légende", name: caption, widget: string, required: false}
+              - {label: "Texte alternatif", name: alt, widget: string, required: false}
+          - label: "Galerie de photos"
+            name: images
+            widget: list
+            collapsed: true
+            summary: "{{fields.caption}}"
+            required: false
+            fields:
+              - {label: "Photo", name: image, widget: image}
+              - {label: "Texte alternatif", name: alt, widget: string, required: false}
+              - {label: "Légende", name: caption, widget: string, required: false}
+          - label: "Liens vidéos"
+            name: videos
+            widget: list
+            collapsed: true
+            summary: "{{fields.caption}}"
+            required: false
+            fields:
+              - {label: "Lien vers la vidéo", name: url, widget: string}
+              - {label: "Légende", name: caption, widget: string, required: false}
+  - name: "portfolio"
+    label: "Catégories du portfolio"
+    files:
       - name: "categories"
         label: "Catégories"
         file: "content/categories.json"

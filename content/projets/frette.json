@@ -1,0 +1,21 @@
+{
+  "id": "frette",
+  "name": "FRETTE",
+  "type": "MÉDIA MUSICAL INDÉPENDANT",
+  "year": "2026",
+  "art": "art-frette",
+  "headline": "La scène locale en grand.",
+  "tags": "Éditorial · Social media",
+  "context": "Donner de la visibilité aux concerts, artistes et initiatives de la scène musicale locale.",
+  "role": "Veille et sélection d’événements, agenda musical, conception de publications et animation éditoriale.",
+  "category": "editorial",
+  "order": 3,
+  "featured": true,
+  "published": true,
+  "images": [],
+  "videos": [],
+  "cover": "",
+  "caption": "",
+  "description": "Un média de proximité qui met en relation artistes, lieux et publics.",
+  "results": ""
+}

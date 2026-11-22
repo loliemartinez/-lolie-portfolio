@@ -44,6 +44,24 @@
       ]))
     ]);
   }
+  function ProjectPreview({ entry, getAsset }) {
+    const project = entry.get('data').toJS();
+    const blocks = Array.isArray(project.blocks) ? project.blocks : [];
+    return wrapper([
+      header((project.year || '') + ' · ' + (project.type || 'PROJET'), project.name || 'NOUVEAU PROJET', project.headline || ''),
+      project.cover ? el('img','pv-image',null,{src:imageSrc(project.cover,getAsset),alt:project.name || ''}) : null,
+      panel('CONTEXTE', project.context || ''),
+      panel('MON INTERVENTION', project.role || ''),
+      project.description ? panel('LE PROJET', project.description) : null,
+      project.results ? panel('RÉSULTATS', project.results) : null,
+      ...blocks.map((block,i)=>el('section','pv-card',[
+        el('div','pv-kicker','RÉALISATION ' + (i+1)),
+        block.kind === 'image' && block.image ? el('img','pv-image',null,{src:imageSrc(block.image,getAsset),alt:block.alt || ''}) : null,
+        el('p','',block.text || block.caption || block.url || '')
+      ])),
+      el('div','pv-note',project.published === false ? 'PROJET MASQUÉ' : 'PROJET VISIBLE')
+    ]);
+  }
   function PhotosPreview({ entry, getAsset }) {
     const photos = get(entry,'photos',[]);
     return wrapper([
@@ -60,7 +78,7 @@
   }
   CMS.registerPreviewStyle('/admin/preview.css');
   CMS.registerPreviewTemplate('general', GeneralPreview);
-  CMS.registerPreviewTemplate('projects', ProjectsPreview);
+  CMS.registerPreviewTemplate('projects', ProjectPreview);
   CMS.registerPreviewTemplate('photos', PhotosPreview);
   CMS.registerPreviewTemplate('categories', CategoriesPreview);
 })();
