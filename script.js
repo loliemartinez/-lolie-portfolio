@@ -8,31 +8,13 @@ const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersect
 nodes.forEach(el=>{el.classList.add('motion-reveal');io.observe(el)});document.documentElement.classList.add('js-motion');
 })();
 
-/* V7.5 - Motif quatre pointes allongées, tracé fin, positions éditoriales. */
+/* V7.6 - Une seule étoile, sur la homepage. */
 (()=>{
- const shape='<svg viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M50 3 C53 47 60 62 97 70 C60 78 53 93 50 137 C47 93 40 78 3 70 C40 62 47 47 50 3 Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>';
- const page=location.pathname.split('/').pop()||'index.html';
- // Emplacements de composition, jamais collés à la ponctuation des titres.
- const spots={
-  'index.html':[['.hero-tattoo-star','hero'],['#projets','work'],['.photo-head','photo'],['.about-layout','about'],['.contact','contact']],
-  'projets.html':[['.subhero','corner'],['.listing','listing-top'],['.listing','listing-bottom']],
-  'photographie.html':[['.photo-subhero','corner'],['.gallery-intro','gallery'],['.photo-masonry','gallery-bottom']],
-  'apropos.html':[['.subhero','corner'],['.about-page','story'],['.skills-strip','skills'],['.about-page','story-bottom']],
-  'projet.html':[['.detail-hero','corner'],['.case-work','case']]
- };
- (spots[page]||[]).forEach(([selector,position],i)=>{
-  const parent=document.querySelector(selector);if(!parent)return;
-  const node=position==='hero'?parent:document.createElement('span');
-  if(position!=='hero'){
-   node.className='tattoo-star tattoo-star--detail tattoo-star--'+position;
-   node.setAttribute('aria-hidden','true');parent.appendChild(node);
-  }
-  node.innerHTML=shape;
-  if(i>0)node.classList.add('tattoo-star--subtle');
- });
  const hero=document.querySelector('.hero-tattoo-star');
  const title=document.querySelector('.hero-title h1');
- if(!hero||!title||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ if(!hero)return;
+ hero.innerHTML='<svg viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M50 3 C53 47 60 62 97 70 C60 78 53 93 50 137 C47 93 40 78 3 70 C40 62 47 47 50 3 Z" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/></svg>';
+ if(!title||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
  let scheduled=false;
  const animate=()=>{scheduled=false;const progress=Math.max(0,Math.min(window.scrollY/(window.innerHeight||800),1));hero.style.setProperty('--star-turn',`${progress*65}deg`);hero.style.setProperty('--star-rise',`${progress*-26}px`);title.style.setProperty('--title-rise',`${progress*-16}px`)};
  window.addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(animate)}},{passive:true});animate();
