@@ -1,14 +1,17 @@
 # À CONFIGURER AVANT CONNEXION : remplacer VOTRE_COMPTE/VOTRE_DEPOT.
 # Le backend GitHub nécessite un accès authentifié (OAuth / fournisseur compatible).
 backend:
+
   name: github
-  repo: VOTRE_COMPTE/VOTRE_DEPOT
+
+  repo: loliemartinez/-lolie-portfolio
+
   branch: main
 media_folder: "uploads"
 public_folder: "/uploads"
 locale: fr
 publish: true
-site_url: "https://VOTRE-SITE.netlify.app"
+site_url: "https://lolie-portfolio.netlify.app"
 collections:
   - name: "site"
     label: "Pages et informations"
